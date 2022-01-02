@@ -1,10 +1,8 @@
-cconst cvDropdown=document.querySelector('.header .cv-dropdown');
+const cvDropdown=document.querySelector('.header .cv-dropdown');
 const cvIconDropdown=document.querySelector('.header .cv-icon img');
 cvIconDropdown.addEventListener('click', function(e){
-    // if(e.target.classList.contains('cv-icon')){
-        cvDropdown.classList.toggle('active');
-        cvIconDropdown.classList.toggle('active');
-    // }
+    cvDropdown.classList.toggle('active');
+    cvIconDropdown.classList.toggle('active');
 });
 
 const portfolioHero=document.querySelector('.main-content .portfolio-hero');
