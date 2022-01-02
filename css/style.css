@@ -29,10 +29,10 @@ a{
 }
 .header h1.title{
     font-size: 18pt;
-    padding: 0.5em 0;
+    text-align: center;
 }
 .header .cv-dropdown{
-    border-top: solid 2px black;
+    /* border-top: solid 2px black; */
     overflow: hidden;
     height: 0;
     transition: height 1s, padding 1s;
@@ -45,10 +45,16 @@ a{
 .header .cv-icon{
     display: flex;
     justify-content: center;
-    background-color: lightgrey;
+    /* background-color: lightgrey; */
+}
+.header .cv-icon img{
+    cursor: pointer;
+}
+.header .cv-icon img:hover{
+    opacity: 0.5;
 }
 .header .cv-icon:hover{
-    background-color: rgb(228, 228, 228);
+    /* background-color: rgb(228, 228, 228); */
     
 }
 .header .cv-dropdown.active{
@@ -56,7 +62,7 @@ a{
     padding: 1em;
     overflow: auto;
 }
-.header .cv-icon.active{
+.header .cv-icon img.active{
     transform: rotate(180deg);
 }
 .portfolios{
@@ -68,9 +74,21 @@ a{
     width: 100%;
     /* box-shadow: 1px 1px 1px 1px lightgrey; */
     border: solid 1px lightgrey;
-    padding: 1em;
     box-sizing: border-box;
     margin: 1em 0;
+    cursor: pointer;
+}
+.portfolios .portfolio .img-container{
+    width: 100%;
+    height: 10em;
+    overflow: hidden;
+    margin-bottom: 1em;
+}
+.portfolios .portfolio .img-container img{
+    width: 100%;
+}
+.portfolios .portfolio p{
+    margin: 1em;
 }
 .portfolios .portfolio:hover{
     border-color: rgb(13, 110, 253);
@@ -83,13 +101,64 @@ a{
 .portfolio-hero img{
     width: 100%;
 }
+.portfolio-hero .portfolio-title{
+    margin-top: 0.5em;
+}
+.portfolio-title{
+    font-size: 20pt;
+    color: black;
+    margin: 0 0.5em;
+    display: inline-block;
+}
 .portfolio-hero p{
     padding: 1em;
 }
 
-/* responsive >=600px */
+footer{
+    border-top: solid 2px rgb(40, 40, 40);
+    margin-top: 2em;
+    font-size: 10pt;
+}
+footer .about{
+    padding: 1em;
+}
+footer .about div{
+    width: max-content;
+    margin: 0 auto;
+    text-align: center;
+}
+footer .about div h2{
+    padding: 0.5em;
+}
+footer .about div ul li{
+    list-style: none;
+    padding: 0.5em;
+}
+footer .about div a{
+    color: black;
+}
+footer .about div a:hover{
+    color: grey;
+}
+footer .copyright{
+    background-color: rgb(41, 41, 41);
+    color: white;
+    text-align: center;
+    padding: 0.5em 0;
+}
+.btn{
+    color: white;
+    border-radius: 5px;
+    background-color: rgb(13, 110, 253);
+    padding: 0.5em 1em;
+    display: block;
+    width: max-content;
+    margin-top: 1em;
+}
 
-@media(min-width: 600px){
+/* responsive >=950px */
+
+@media(min-width: 950px){
     body{
         padding: 0;
     }
@@ -97,12 +166,28 @@ a{
         width: 70%;
         margin: 0 auto;
     }
+    footer{
+        font-size: 12pt;
+    }
+}
+
+/* responsive >600 */
+@media(min-width: 600px){
+    .portfolios .portfolio{
+        width: 49%;
+    }
 }
 
 /* responsive >500 */
 
 @media(min-width: 500px){
-    .portfolios .portfolio{
-        width: 49%;
+    footer .about{
+        display: flex;
+    }
+    footer div{
+        flex: 1;
+    }
+    .header h1.title{
+        padding-top: 0.5em;
     }
 }
